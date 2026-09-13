@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scratch Discord Activity</title>
+</head>
+<body>
+    <div id="player-container">
+        <!-- Hier wird das Scratch-Spiel dynamisch per ID geladen -->
+        <iframe id="scratch-iframe" src="" width="485" height="402" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <input type="text" id="projectId" placeholder="Projekt ID eingeben...">
+    <button onclick="loadGame()">Spiel starten</button>
+
+    <script>
+        function loadGame() {
+            const id = document.getElementById('projectId').value;
+            // TurboWarp Embed Player eignet sich super für sowas, da er performanter läuft
+            const iframe = document.getElementById('scratch-iframe');
+            iframe.src = `https://turbowarp.org/${id}/embed`;
+        }
+    </script>
+</body>
+</html>
